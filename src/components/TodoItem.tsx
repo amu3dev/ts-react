@@ -1,3 +1,5 @@
+import styles from "./TodoItem.module.css";
+
 const TodoItem: React.FC<{
   title: string;
   onDelete: (title: string) => void;
@@ -6,7 +8,11 @@ const TodoItem: React.FC<{
     // console.log(title);
     onDelete(title);
   };
-  return <li onClick={handelClick}>{title}</li>;
+  return (
+    <li onClick={handelClick} className={styles.item}>
+      {title}
+    </li>
+  );
 };
 
 export default TodoItem;
